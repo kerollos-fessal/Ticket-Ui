@@ -1,0 +1,31 @@
+.custom-button{
+    border: 1px solid #E9EAEA;
+    background-color: #F9F9F9;
+    color: #1C1C28;
+}
+
+.custom-icon{
+    color: #8A74F9;
+}
+
+
+.custom-button:hover{
+    border: 1px solid #717272;
+    background-color: #8A74F9;
+    color: #F9F9F9;
+}
+
+.custom-button:hover  .custom-icon{
+    color: #F9F9F9;
+}
+
+
+.custom-arrow-icon{
+    background-color: #E7EAED;
+}
+
+
+.custom-arrow-icon:hover{
+    background-color: #8A74F9;
+    color: #F9F9F9;
+}

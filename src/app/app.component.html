@@ -1,1 +1,16 @@
-<div>app works </div>
+<section [lang]="isRtl ? 'ar' : 'en'" [dir]="isRtl ? 'rtl' : 'ltr'" class="p-md-5 pt-5 px-3 pb-3">
+  <div  class="ps-5 ms-lg-5">
+    <app-header></app-header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <app-chart></app-chart>
+        </div>
+        <div class="col-md-4">
+          <app-ticket></app-ticket>
+        </div>
+      </div>
+      <app-table></app-table>
+    </div>
+  </div>
+</section>
