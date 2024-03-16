@@ -1,2 +1,87 @@
-<mat-slide-toggle class="w-auto">مفعل</mat-slide-toggle>
+<div>
+    <div class="d-flex flex-wrap justify-content-between">
+        <div class="d-flex controlers">
+<p class="mb-0 text-nowrap align-self-center me-2">مبيعات التذاكر</p>
+<div class="input-group">
+    <button
+    class="btn border-end-0 border-1 bg-white inputBorderColoring">
+    <i class="fa fa-search" ></i>
+</button>
+<input
+name="search"
+  type="text"
+  id="search"
+  class="form-control border-start-0 border-1 inputBorderColoring py-0 px-0 "
+  placeholder="بحث عن ..."
+/>
+    </div>
+<button class="btn rounded-2 bg-white fw-lighter mx-1 custom-icon invertColorBtn"><i class="fa-solid fa-sliders "></i></button>
+<button class="btn rounded-2 bg-white fw-lighter custom-icon invertColorBtn"><i class="fa-solid fa-right-left rotated-icon"></i></button>
+        </div>
+        <div class="d-flex align-items-center">
+            <mat-slide-toggle class="w-auto me-1" (click)="changeState()"><span class="toggleState d-block me-2">{{toggleState}}</span></mat-slide-toggle>
+            <button class="btn rounded-1 fw-normal custom-button text-white ">
+                حجز تذكرة جديدة
+              </button>
+        </div>
+    </div><p-table 
+    #dt1
+    [value]="customers"
+    dataKey="id"
+    [rows]="4"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['name', 'coustomer.name', '', '']"
+>
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" ></button>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="min-width:15rem">
+                <div class="flex align-items-center">
+                    Name
+                    <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+                </div>
+            </th>
+            <th style="min-width:15rem">
+                <div class="flex align-items-center">
+                    Phone
+                </div>
+            </th>
+            <th style="min-width:15rem">
+                <div class="flex align-items-center">
+                    Ticket No
+                </div>
+            </th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+        <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.ticketNo }}</td>
+            <!-- Add more columns as needed -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="7">No customers found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+    <div>
+
+    </div>
+</div>
 

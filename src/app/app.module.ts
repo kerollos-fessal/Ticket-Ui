@@ -19,6 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from 'ngx-clipboard';
 import { ToastrModule } from 'ngx-toastr';
 import { QRCodeModule } from 'angularx-qrcode';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     MatTooltipModule,
     ClipboardModule,
     ToastrModule.forRoot(),
-    QRCodeModule
+    QRCodeModule,
+    TableModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}

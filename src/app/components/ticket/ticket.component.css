@@ -20,7 +20,7 @@
 
 .custom-button {
   border: 1px solid #fff;
-  background-color: #8a74f9;
+  background-color: transparent;
   color: #1c1c28;
   font-size: 12px;
 }
@@ -74,12 +74,6 @@ qrcode {
   right: -3.6%;
 }
 
-@media screen and (max-width: 600px) {
-  .trashIcon {
-    padding: 5px !important;
-  }
-}
-
 @media screen and (min-width: 768px) and (max-width: 835px) {
   .lowerPartOfTicket {
     padding-right: 5px !important;
@@ -96,6 +90,16 @@ qrcode {
     right: -4.2% !important;
   }
 }
+
+
+
+
+@media screen and (max-width: 600px) {
+  .trashIcon {
+    padding: 5px !important;
+  }
+}
+
 
 
 @media screen and (min-width: 530px) and (max-width: 650px) {
@@ -116,6 +120,17 @@ qrcode {
       
       .circle-right {
         right: -2.4%;
+      }
+  }
+  
+
+  @media screen and (min-width: 1300px) {
+    .circle-left {
+        left: -2.3%;
+      }
+      
+      .circle-right {
+        right: -2.3%;
       }
   }
   
