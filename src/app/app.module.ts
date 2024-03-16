@@ -37,7 +37,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatNativeDateModule,
     MatMenuModule,
     MatRippleModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
