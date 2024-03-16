@@ -5,3 +5,6 @@ body { margin: 0; overflow-x: visible;                                          
     font-family: 'Neo Sans Arabic', sans-serif;
 }
 
+.custom-icon{
+    color: #8A74F9;
+}

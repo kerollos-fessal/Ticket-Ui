@@ -18,33 +18,40 @@ this.generateChart()
 
 
 generateChart(){
-  const seriesData = [200, 100, 230, 300, 400, 200, 150, 300, 100, 200, 400, 150];
+  const seriesData = [250, 150, 280, 350, 450, 250, 200, 350, 150, 250, 450, 200];
   const categories = ['ديسمبر', 'نوفمبر', 'أكتوبر', 'سبتمبر','أغسطس', 'يوليو', 'يونيو', 'مايو', 'أبريل', 'مارس', 'فبراير','يناير'];
 
   const chartOptions: ApexCharts.ApexOptions = {
     chart: {
         type: 'area',
-        height: 264,
+        height: 232,
         foreColor:"#9291A5",
         toolbar: {
           show: false,
-
+        },
+        animations:{
+          enabled:true,
         }
     },
     series: [{
         name: `استخدام`,
         data: seriesData,
-        
     }],
     xaxis: {
-        categories: categories
+        categories: categories,
+        axisBorder:{
+          show: true,
+      
+        }
     },
     yaxis: {
-      // Specify the number of tick marks and grid lines
+      
       tickAmount: 4,
       show: false,
+      max: 460,
+      forceNiceScale: true,
       labels: {
-        formatter: (value: number) => `${value}%`
+        formatter: (value: number) => `${value} `
       }
     },
     grid :{
@@ -53,13 +60,10 @@ generateChart(){
     },
     legend: {
       // Add your legend configuration here
+      show: false,
       position: 'top',
     },
     colors: ['#8A74F9'],
-    forecastDataPoints:{
-      // count: 4
-
-    },
     markers:{
       height: 500,
       
@@ -72,11 +76,20 @@ generateChart(){
       hideEmptySeries: true,
       style: {
         fontSize: '12px',
-        fontFamily: 'Inter',
+        fontFamily: 'Neo Sans Arabic',
       },
+     y:{
+      
+     title:{
+      formatter(seriesName) {
+          return " " + seriesName;
+      },
+
+     }
+     }
+     
     },
     title: {
-      // Add your title configuration here
       text: 'إحصائيات استخدام القسيمة',
       align: 'right',
       offsetX: -150,
@@ -101,17 +114,24 @@ generateChart(){
       fontWeight: 400,
     }
     },
+
     plotOptions: {
+      
       bar: {
         dataLabels: {
 
           total: {
             enabled: false
-          }
-        }
+          },
+          
+        maxItems: 12,
+        },
       },
     },
-  
+dataLabels:{
+enabled:false
+},
+
   };
 
   const chartElement = document.querySelector('#chart');

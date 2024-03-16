@@ -1,1 +1,49 @@
-<p>ticket works!</p>
+<div
+  class="flex-column align-content-center align-items-center text-center ticket position-relative mb-5"
+>
+<div class="position-absolute trashIcon end-0 pe-3 ">
+    <i class="fa fa-trash-can text-white fs-5"></i>
+</div>
+<div class="evacuatedCircle circle-left"></div>
+<div class="evacuatedCircle circle-right"></div>
+  <p class="text-white fw-medium py-4 mb-0">عرض التذكرة الخاصة بالفيلم</p>
+  <div
+    #textContainer
+    class="mb-3 w-75 mx-auto bg-white rounded-2 ticket-url-wrapper overflow-hidden d-flex justify-content-center"
+  >
+    <span class="align-self-center ticket-url fw-medium">
+        {{ticketUrl}}
+    </span>
+    <button
+      ngxClipboard
+      [cbContent]="ticketUrl"
+      [container]="textContainer"
+      (click)="copyToClipBoard()"
+      class="btn border-0 custom-icon flex-shrink-0"
+    >
+      <i class="fa-regular fa-copy"></i>
+    </button>
+  </div>
+  <p class="text-white expiry-date pb-3 mb-3">فعال حتي 15 يوليو 2023</p>
+  <div class="d-flex flex-nowrap justify-content-between px-md-4 px-3 lowerPartOfTicket">
+    <div class="d-flex text-start mb-4">
+      <div class="text-white">
+        <span class="d-block mb-2">خصم</span><span class="fw-medium">25%</span>
+        <button
+          class="btn custom-button rounded-1 fw-normal py-1 px-2 ms-2 text-white"
+        >
+          <i class="fa-regular fa-paper-plane fa-flip-horizontal ps-1"></i>
+         <span>مشاركة</span>
+        </button>
+      </div>
+    </div>
+    <div class="mb-2">
+      <qrcode
+        [qrdata]="ticketUrl"
+        class="custom-qrcode"
+        [width]="75"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+    </div>
+  </div>
+</div>

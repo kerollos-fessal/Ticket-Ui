@@ -16,6 +16,10 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ClipboardModule } from 'ngx-clipboard';
+import { ToastrModule } from 'ngx-toastr';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatMenuModule,
     MatRippleModule,
     MatTooltipModule,
+    ClipboardModule,
+    ToastrModule.forRoot(),
+    QRCodeModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}

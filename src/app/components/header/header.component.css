@@ -4,10 +4,6 @@
     color: #1C1C28;
 }
 
-.custom-icon{
-    color: #8A74F9;
-}
-
 
 .custom-button:hover{
     border: 1px solid #717272;
@@ -28,4 +24,8 @@
 .custom-arrow-icon:hover{
     background-color: #8A74F9;
     color: #F9F9F9;
+}
+
+p{
+    font-weight: 500;
 }

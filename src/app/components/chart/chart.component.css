@@ -2,3 +2,9 @@
     border: 0.81px solid #EBEBEB;
     border-radius: 8px !important;
 }
+
+
+.tooltip{
+    display: flex;
+    justify-content: space-between;
+}

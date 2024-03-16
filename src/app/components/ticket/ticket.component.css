@@ -1,0 +1,121 @@
+.ticket {
+  background-color: #8a74f9;
+  border-radius: 12.47px;
+  background-image: url("../../../assets/images/overlay.png");
+}
+
+.ticket-url-wrapper {
+  border: 0.83px dashed #dddddd;
+}
+
+.ticket-url {
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+}
+
+.expiry-date {
+  border-bottom: 2.49px dashed #ffffff66;
+  font-size: 12px;
+}
+
+.custom-button {
+  border: 1px solid #fff;
+  background-color: #8a74f9;
+  color: #1c1c28;
+  font-size: 12px;
+}
+
+.custom-button:hover {
+  border: 1px solid #717272;
+  background-color: #fff;
+  color: #8a74f9 !important;
+}
+
+.custom-button:hover .custom-icon {
+  color: #8a74f9 !important;
+}
+
+qrcode {
+  cursor: pointer;
+}
+
+.custom-qrcode {
+  border-radius: 4px !important;
+}
+
+.trashIcon {
+  top: 10%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.trashIcon:hover i {
+  transition: all 0.4s;
+}
+
+.trashIcon:hover i {
+  color: rgba(242, 64, 64, 0.979) !important;
+}
+
+.evacuatedCircle {
+  width: 25px;
+  height: 25px;
+  background-color: #F3F5F7;
+  position: absolute;
+  top: 55.5%;
+  border-radius: 50%;
+}
+
+.circle-left {
+  left: -3.6%;
+}
+
+.circle-right {
+  right: -3.6%;
+}
+
+@media screen and (max-width: 600px) {
+  .trashIcon {
+    padding: 5px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 835px) {
+  .lowerPartOfTicket {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+  .trashIcon {
+    padding: 5px !important;
+  }
+  .circle-left {
+    left: -4.2% !important;
+  }
+  
+  .circle-right {
+    right: -4.2% !important;
+  }
+}
+
+
+@media screen and (min-width: 530px) and (max-width: 650px) {
+    .circle-left {
+        left: -3%;
+      }
+      
+      .circle-right {
+        right: -3%;
+      }
+  }
+  
+
+  @media screen and (min-width: 650px) and (max-width: 768px) {
+    .circle-left {
+        left: -2.4%;
+      }
+      
+      .circle-right {
+        right: -2.4%;
+      }
+  }
+  
