@@ -165,12 +165,15 @@ export class ChartComponent implements OnInit {
       },
 
       plotOptions: {
+        
         bar: {
           dataLabels: {
             total: {
+            
               enabled: false,
             },
             maxItems: 12,
+
           },
         },
       },
