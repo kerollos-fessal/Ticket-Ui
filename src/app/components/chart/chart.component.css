@@ -8,3 +8,25 @@
     display: flex;
     justify-content: space-between;
 }
+
+.custom-dropdown{
+    border: 0.81px solid #E8E8E8;
+    border-radius: 8.07px;
+    color: #1C1C28;
+    top: 14px;
+    left:14px ;
+    background-color: #FAFAFA;
+}
+
+
+.inner-dropdown{
+    border-radius: 8.07px !important;
+}
+
+
+@media screen and (max-width: 420px) {
+  .inner-dropdown{
+    display: none !important;
+  }
+  }
+  

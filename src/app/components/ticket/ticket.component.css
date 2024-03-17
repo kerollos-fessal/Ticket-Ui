@@ -1,5 +1,5 @@
 .ticket {
-  background-color: #8a74f9;
+  background-color: var(--main-color);
   border-radius: 12.47px;
   background-image: url("../../../assets/images/overlay.png");
 }
@@ -28,11 +28,11 @@
 .custom-button:hover {
   border: 1px solid #717272;
   background-color: #fff;
-  color: #8a74f9 !important;
+  color: var(--main-color) !important;
 }
 
 .custom-button:hover .custom-icon {
-  color: #8a74f9 !important;
+  color: var(--main-color) !important;
 }
 
 qrcode {

@@ -1,2 +1,8 @@
 
-<div pTooltip="صيدناوي مول, برج العرب" tooltipPosition="top" tooltipStyleClass="custom-tooltip" class="bg-white p-3 mb-5" id="chart"></div>
+<div  class="bg-white p-3 mb-5 position-relative" id="chart">
+    <div class="position-absolute justify-content-center custom-dropdown" >
+        <p-dropdown class="inner-dropdown" [options]="months" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+    </div>
+</div>
+
+

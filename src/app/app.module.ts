@@ -24,6 +24,7 @@ import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { SearchPipe } from './search.pipe';
 import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { FormsModule } from '@angular/forms';
     TableModule,
     ButtonModule,
     TooltipModule,
-    FormsModule
+    FormsModule,
+    DropdownModule
 
   ],
   providers: [

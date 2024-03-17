@@ -11,9 +11,6 @@ body { margin: 0; overflow-x: visible;                                          
     --main-color: #8a74f9;
   }
 
-.custom-icon{
-    color: var(--main-color);
-}
 
 
 
