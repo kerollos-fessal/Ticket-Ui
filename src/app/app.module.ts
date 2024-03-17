@@ -20,6 +20,10 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { ToastrModule } from 'ngx-toastr';
 import { QRCodeModule } from 'angularx-qrcode';
 import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button'; 
+import { TooltipModule } from 'primeng/tooltip';
+import { SearchPipe } from './search.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +32,8 @@ import { TableModule } from 'primeng/table';
     TicketComponent,
     ChartComponent,
     TableComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,11 @@ import { TableModule } from 'primeng/table';
     ClipboardModule,
     ToastrModule.forRoot(),
     QRCodeModule,
-    TableModule
+    TableModule,
+    ButtonModule,
+    TooltipModule,
+    FormsModule
+
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}

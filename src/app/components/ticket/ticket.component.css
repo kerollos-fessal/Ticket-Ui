@@ -60,7 +60,7 @@ qrcode {
 .evacuatedCircle {
   width: 25px;
   height: 25px;
-  background-color: #F3F5F7;
+  background-color: #f3f5f7;
   position: absolute;
   top: 55.5%;
   border-radius: 50%;
@@ -85,14 +85,11 @@ qrcode {
   .circle-left {
     left: -4.2% !important;
   }
-  
+
   .circle-right {
     right: -4.2% !important;
   }
 }
-
-
-
 
 @media screen and (max-width: 600px) {
   .trashIcon {
@@ -100,37 +97,34 @@ qrcode {
   }
 }
 
-
-
 @media screen and (min-width: 530px) and (max-width: 650px) {
-    .circle-left {
-        left: -3%;
-      }
-      
-      .circle-right {
-        right: -3%;
-      }
+  .circle-left {
+    left: -3%;
   }
-  
 
-  @media screen and (min-width: 650px) and (max-width: 768px) {
-    .circle-left {
-        left: -2.4%;
-      }
-      
-      .circle-right {
-        right: -2.4%;
-      }
+  .circle-right {
+    right: -3%;
   }
-  
+}
 
-  @media screen and (min-width: 1300px) {
-    .circle-left {
-        left: -2.3%;
-      }
-      
-      .circle-right {
-        right: -2.3%;
-      }
+
+
+@media screen and (min-width: 650px) and (max-width: 768px) {
+  .circle-left {
+    left: -2.4%;
   }
-  
+
+  .circle-right {
+    right: -2.4%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .circle-left {
+    left: -2.3%;
+  }
+
+  .circle-right {
+    right: -2.3%;
+  }
+}

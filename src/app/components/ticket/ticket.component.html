@@ -2,7 +2,10 @@
   class="flex-column align-content-center align-items-center text-center ticket position-relative mb-5"
 >
 <div class="position-absolute trashIcon end-0 pe-3 ">
+  <div  pTooltip="حذف" tooltipPosition="bottom" tooltipStyleClass="custom-tooltip">
+    
     <i class="fa fa-trash-can text-white fs-5"></i>
+  </div>
 </div>
 <div class="evacuatedCircle circle-left"></div>
 <div class="evacuatedCircle circle-right"></div>
@@ -15,6 +18,7 @@
         {{ticketUrl}}
     </span>
     <button
+    pTooltip="اضغط للنسخ" tooltipPosition="top" tooltipStyleClass="custom-tooltip"
       ngxClipboard
       [cbContent]="ticketUrl"
       [container]="textContainer"

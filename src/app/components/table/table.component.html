@@ -1,87 +1,173 @@
 <div>
-    <div class="d-flex flex-wrap justify-content-between">
-        <div class="d-flex controlers">
-<p class="mb-0 text-nowrap align-self-center me-2">مبيعات التذاكر</p>
-<div class="input-group">
-    <button
-    class="btn border-end-0 border-1 bg-white inputBorderColoring">
-    <i class="fa fa-search" ></i>
-</button>
-<input
-name="search"
-  type="text"
-  id="search"
-  class="form-control border-start-0 border-1 inputBorderColoring py-0 px-0 "
-  placeholder="بحث عن ..."
-/>
+  <div class="d-flex flex-wrap justify-content-between mb-4">
+    <div class="d-flex controlers mb-2">
+      <p class="mb-0 text-nowrap align-self-center me-2">مبيعات التذاكر</p>
+      <div class="input-group">
+        <button class="btn border-end-0 border-1 bg-white inputBorderColoring">
+          <i class="fa fa-search"></i>
+        </button>
+        <input pTooltip="ابحث باللغة العربية" tooltipPosition="top" tooltipStyleClass="custom-tooltip"
+          [(ngModel)]="searchKey"
+          (input)="onSearchKeyChange()"
+        name="search"
+          type="text"
+          id="search"
+          class="form-control border-start-0 border-1 inputBorderColoring py-0 px-0"
+          placeholder="بحث عن ..."
+        />
+      </div>
+      <button
+        class="btn spacer rounded-2 bg-white fw-lighter mx-1 custom-icon invertColorBtn"
+      >
+        <i class="fa-solid fa-sliders"></i>
+      </button>
+      <button
+        class="btn spacer rounded-2 bg-white fw-lighter custom-icon invertColorBtn"
+      >
+        <i class="fa-solid fa-right-left rotated-icon"></i>
+      </button>
     </div>
-<button class="btn rounded-2 bg-white fw-lighter mx-1 custom-icon invertColorBtn"><i class="fa-solid fa-sliders "></i></button>
-<button class="btn rounded-2 bg-white fw-lighter custom-icon invertColorBtn"><i class="fa-solid fa-right-left rotated-icon"></i></button>
-        </div>
-        <div class="d-flex align-items-center">
-            <mat-slide-toggle class="w-auto me-1" (click)="changeState()"><span class="toggleState d-block me-2">{{toggleState}}</span></mat-slide-toggle>
-            <button class="btn rounded-1 fw-normal custom-button text-white ">
-                حجز تذكرة جديدة
-              </button>
-        </div>
-    </div><p-table 
+    <div class="d-flex align-items-center mb-2">
+      <mat-slide-toggle class="w-auto me-1" (click)="changeState()"
+        ><span class="toggleState d-block me-2">{{
+          toggleState
+        }}</span></mat-slide-toggle
+      >
+      <button class="btn rounded-1 fw-normal custom-button text-white">
+        حجز تذكرة جديدة
+      </button>
+    </div>
+  </div>
+  <div >
+  <p-table
     #dt1
-    [value]="customers"
-    dataKey="id"
+    [tableStyle]="{'min-width': '50rem'}"
+    [value]="customers| search: searchKey"
+    dataKey="name"
     [rows]="4"
     [showCurrentPageReport]="true"
-    [rowsPerPageOptions]="[10, 25, 50]"
+    [rowsPerPageOptions]="[20, 25, 50]"
     [paginator]="true"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [globalFilterFields]="['name', 'coustomer.name', '', '']"
->
-    <ng-template pTemplate="caption">
-        <div class="flex">
-            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" ></button>
-            <span class="p-input-icon-left ml-auto">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" placeholder="Search keyword" />
-            </span>
-        </div>
+    currentPageReportTemplate=" عرض {{dt1.rows}} من اصل  {{ dt1.totalRecords }}"
+    [globalFilterFields]="['coustomer.name']"
+    paginatorLocale="fa-IR"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr class="customTableHeaders p-5">
+        <th style="min-width: 2rem">
+          <div class="flex align-items-center">#</div>
+        </th>
+        <th style="min-width: 5rem">
+          <div class="flex align-items-center d-flex justify-content-center">
+            المستخدم
+            <p-columnFilter
+              type="text"
+              field="name"
+              display="menu"
+            ></p-columnFilter>
+          </div>
+        </th>
+        <th style="min-width: 5rem">
+          <div class="flex align-items-center d-flex justify-content-center">
+            رقم التذكرة
+          </div>
+        </th>
+        <th pSortableColumn="price" style="min-width: 5rem">
+          <div class="flex align-items-center d-flex justify-content-center">
+            قيمة التذكرة<p-sortIcon field="price" class="ms-2"></p-sortIcon>
+          </div>
+        </th>
+        <th style="min-width: 17rem;">
+          <div class="flex align-items-center d-flex justify-content-center">
+            السينمات
+          </div>
+        </th>
+        <th style="min-width: 5rem">
+          <div class="flex align-items-center d-flex justify-content-center">
+            عدد الأشخاص
+          </div>
+        </th>
+        <th style="min-width: 5rem">
+          <div class="flex align-items-center d-flex justify-content-center">
+            عدد مرات الشراء
+          </div>
+        </th>
+        <th style="min-width: 5rem">
+          <div class="flex align-items-center d-flex justify-content-center">
+            التذكرة
+          </div>
+        </th>
+      </tr>
     </ng-template>
-    <ng-template pTemplate="header">
-        <tr>
-            <th style="min-width:15rem">
-                <div class="flex align-items-center">
-                    Name
-                    <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
-                </div>
-            </th>
-            <th style="min-width:15rem">
-                <div class="flex align-items-center">
-                    Phone
-                </div>
-            </th>
-            <th style="min-width:15rem">
-                <div class="flex align-items-center">
-                    Ticket No
-                </div>
-            </th>
+    <ng-template
+      pTemplate="body"
+      let-customer 
+      let-ri="rowIndex"
+      let-columns="columns"
+    >
+      <tr>
+        <td class="custom-index index-color">{{ ri + 1 }}</td>
+        <td>
+          <div class="d-flex justify-content-center">
+            <div class="custom-image-container me-2">
+              <img
+                [src]="customer.image"
+                alt="customer image"
+                class="w-100 rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <span class="custom-name default-table-text">{{
+                customer.name
+              }}</span>
+              <span class="custom-phone">0{{ customer.phone }}</span>
+            </div>
+          </div>
+        </td>
 
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-customer>
-        <tr>
-            <td>{{ customer.name }}</td>
-            <td>{{ customer.phone }}</td>
-            <td>{{ customer.ticketNo }}</td>
-            <!-- Add more columns as needed -->
-        </tr>
+        <td class="custom-index text-center default-table-text">
+          {{ customer.ticketNo }}
+        </td>
+        <td class="custom-index text-center default-table-text">
+          {{ customer.price | currency : "USD" : "symbol" : "1.0-0" }}
+        </td>
+        <td class="custom-index text-center default-table-text cinema-data"  pTooltip="صيدناوي مول, برج العرب" tooltipPosition="top" tooltipStyleClass="custom-tooltip">
+          {{ customer.cinemaNames }}
+        </td>
+        <td class="custom-index text-center default-table-text">
+          {{ customer.PersonsNo }}
+        </td>
+        <td class="custom-index text-center default-table-text">
+          {{ customer.buyTimes }}
+        </td>
+        <td class="custom-index text-center default-table-text">
+          <div class="d-flex align-items-center">
+            <button class="custom-table-button btn py-0 px-1 me-2">
+              <i class="fa-solid fa-ticket"></i>
+            </button>
+            <div class=" d-flex flex-column align-content-start">
+              <div class="ticket-info-type text-black text-start fw-medium">
+                <span>{{ customer.ticketType.ticketNo }}.</span>
+                <span>{{ customer.ticketType.format }}</span>
+              </div>
+              <div class="ticket-info-details text-start">
+                  <span>{{ customer.ticketType.fileSize }} .</span>
+                <span> {{ customer.ticketType.format | uppercase}}</span>
+              </div>
+            </div>
+            <i class="fa-solid fa-download custom-download-icon"></i>
+          </div>
+        </td>
+      </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">
-        <tr>
-            <td colspan="7">No customers found.</td>
-        </tr>
+      <tr>
+        <td class="text-center alert alert-danger" colspan="8">لا يوجد عملاء بهذه البيانات</td>
+      </tr>
     </ng-template>
-</p-table>
+    <ng-template pTemplate="paginatorright">
 
-    <div>
-
-    </div>
+      </ng-template>
+  </p-table>
+ </div>
 </div>
-

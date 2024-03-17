@@ -1,88 +1,174 @@
-.inputBorderColoring{
-    border-color: #92A1AD66;
+i {
+  cursor: pointer;
+}
+.inputBorderColoring {
+  border-color: #92a1ad66;
 }
 
-.inputBorderColoring i{
-    color: #292D32;
+.inputBorderColoring i {
+  color: #292d32;
 }
 
-
-.inputBorderColoring:focus{
-box-shadow: none !important;
+.inputBorderColoring:focus {
+  box-shadow: none !important;
 }
 
-.custom-icon{
-border-color: #92A1AD66;
-color:#92A1AD ;
+.custom-icon {
+  border-color: #92a1ad66;
+  color: #92a1ad;
 }
 
-.toggleState{
-    color: #9C9D9F;
+.toggleState {
+  color: #9c9d9f;
 }
 
-.custom-button{
-    background-color:#8a74f9 ;
+.custom-button {
+  background-color: #8a74f9;
 }
 
-.custom-button:hover{
-    background-color:#fff ;
-    color: #8a74f9 !important;
-    border: 1px solid  #8a74f9;
+.custom-button:hover {
+  background-color: #fff;
+  color: #8a74f9 !important;
+  border: 1px solid #8a74f9;
 }
 
-.inputColoring:focus{
-    box-shadow: none !important;
+.inputColoring:focus {
+  box-shadow: none !important;
 }
-
 
 .form-control::placeholder {
-   color: #92A1AD;
-  }
-
-  .rotated-icon {
-    transform: rotate(90deg);
-  }
-
-
-  .invertColorBtn:hover{
-    color: white;
-    background-color: #8a74f9 !important;
-  }
-
-
-  ::ng-deep .mdc-switch.mdc-switch--selected:enabled .mdc-switch__icon{
-    display: none;
-  }
-
-  ::ng-deep .mdc-switch:enabled .mdc-switch__track::after {
-    background: #8a74f9 !important;
-    height: 27px !important;
+  color: #92a1ad;
 }
 
-::ng-deep .mdc-switch .mdc-switch__handle{
-    color: #8a74f9 !important;
+.rotated-icon {
+  transform: rotate(90deg);
+}
+
+.invertColorBtn:hover {
+  color: white;
+  background-color: #8a74f9 !important;
+}
+
+/*              switch styling            */
+::ng-deep .mdc-switch.mdc-switch--selected:enabled .mdc-switch__icon {
+  display: none;
+}
+
+::ng-deep .mdc-switch:enabled .mdc-switch__track::after {
+  background: #8a74f9 !important;
+  height: 27px !important;
+}
+
+::ng-deep .mdc-switch .mdc-switch__handle {
+  color: #8a74f9 !important;
 }
 
 ::ng-deep .mdc-switch {
-    color: #8a74f9 !important;
+  color: #8a74f9 !important;
 }
 
-::ng-deep .mat-slide-toggle-bar{
-    height: 27px !important;
-    width: 46px !important;
-    border-radius: 36px !important;
+::ng-deep .mat-slide-toggle-bar {
+  height: 27px !important;
+  width: 46px !important;
+  border-radius: 36px !important;
 }
 
-::ng-deep .mat-slide-toggle-thumb{
-    top: 6px !important;
-    right: -6px !important;
-    position: relative !important;
+::ng-deep .mat-slide-toggle-thumb {
+  top: 6px !important;
+  right: -6px !important;
+  position: relative !important;
 }
 
+/* table styling */
 
+.customTableHeaders {
+  color: #abaab1 !important;
+}
 
-  @media screen and (max-width: 400px) {
-    .controlers {
-      flex-wrap: wrap !important;
-    }
+.custom-image-container {
+  width: 29.88px;
+  height: 29.88px;
+}
+
+.custom-index {
+  font-size: 13.28px !important;
+  font-family: Inter, sans-serif;
+}
+.index-color {
+  color: #898995;
+}
+
+.custom-name {
+  font-size: 11.62px;
+}
+
+.custom-phone {
+  font-size: 9.96px;
+  color: #92a1ad;
+}
+
+.ticket-info-type {
+  font-size: 11.67px;
+}
+
+.ticket-info-details {
+  color: #00000066;
+  font-size: 10px;
+}
+
+.default-table-text {
+  color: #1c1c28;
+}
+
+.custom-table-button {
+  color: #8a74f9;
+  font-size: 15px;
+  background-color: #f4f2ff;
+}
+
+.custom-table-button:hover {
+  color: #f4f2ff;
+  background-color: #8a74f9;
+}
+
+.custom-download-icon {
+  color: #8a74f9;
+  transition: all 0.4s;
+}
+
+.custom-download-icon:hover {
+  color: #1c1c28;
+  transition: all 0.4s;
+}
+
+.cinema-data {
+  max-width: 12rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  color: #abaab1;
+  font-size: 13.28px;
+}
+::ng-deep .p-datatable-table {
+  border: 1px solid #f3f3f5 !important;
+}
+
+::ng-deep .p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: #292d32;
+}
+
+/* ::ng-deep .p-datatable .p-paginator-bottom{
+  justify-content: space-between;
+} */
+
+@media screen and (max-width: 400px) {
+  .controlers {
+    flex-wrap: wrap !important;
   }
+  .spacer {
+    margin-top: 16px !important;
+  }
+}
