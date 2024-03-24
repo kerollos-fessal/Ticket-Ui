@@ -111,7 +111,7 @@ export class ChartComponent implements OnInit {
         onDatasetHover: {
           highlightDataSeries:true,
         },
-        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        custom: function ({ series, seriesIndex, dataPointIndex }) {
           
           return (
             `<div class="p-2 rounded-3 fw-medium" style="background-color:#1E1B39">
