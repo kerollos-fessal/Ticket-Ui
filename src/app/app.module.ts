@@ -25,7 +25,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { SearchPipe } from './search.pipe';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ButtonModule,
     TooltipModule,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    HttpClientModule
 
   ],
   providers: [

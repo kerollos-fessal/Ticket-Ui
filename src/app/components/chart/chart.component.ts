@@ -1,33 +1,63 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import * as ApexCharts from 'apexcharts';
+import { User } from 'src/app/interfaces/user';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements OnInit{
   selectedCity: string = '';
   months: { name: string }[] = [
     { name: 'سنويا' },
     { name: 'شهريا' },
     { name: 'يوميا' },
   ];
-  // selectedCity: this.months ;
-  allData: number[] = []
-  constructor() {}
+  allData: User[] = [];
+  seriesData = [
+    150, 350, 150, 450, 250, 350, 200, 350, 150, 250, 450, 200,
+  ];
+
+  constructor(private _usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.generateChart();
+    this.getData()
+  }
+
+
+  getData(){
+this._usersService.getUsers().subscribe({
+  next:(data)=>{
+    this.allData = data
+    this.seriesData=[];
+    this.allData.forEach((item)=>{
+    this.seriesData.push(item.rating.count);
+  });
+  this.generateChart();
+  },
+
+  error:(err)=>{
+    console.log(err);
+    
+  }
+})
   }
 
   generateChart() {
-    const seriesData = [
-      250, 350, 150, 450, 250, 350, 200, 350, 150, 250, 450, 200,
-    ];
-    this.allData =seriesData
+ 
     const categories = [
+      
+      'أغسطس',
+      'يوليو',
+      'يونيو',
+      'مايو',
+      'أبريل',
+      'مارس',
+      'فبراير',
+      'يناير',
       'ديسمبر',
       'نوفمبر',
       'أكتوبر',
@@ -57,7 +87,7 @@ export class ChartComponent implements OnInit {
       series: [
         {
           name: `استخدام`,
-          data: seriesData,
+          data: this.seriesData,
         },
       ],
       xaxis: {
@@ -87,7 +117,7 @@ export class ChartComponent implements OnInit {
       yaxis: {
         tickAmount: 4,
         show: false,
-        max: 460,
+        max: 679,
         forceNiceScale: true,
         labels: {
           formatter: (value: number) => `${value} `,
